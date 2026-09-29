@@ -1,3 +1,4 @@
+# One-Hot Encoding with your own words
 from sklearn.preprocessing import OneHotEncoder
 
 words = [['red'], ['blue'], ['green'], ['yellow'], ['red'], ['blue']]
