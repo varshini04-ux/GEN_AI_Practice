@@ -1,7 +1,7 @@
 # One-Hot Encoding with your own words
 from sklearn.preprocessing import OneHotEncoder
 
-words = [['red'], ['blue'], ['green'], ['yellow'], ['red'], ['blue']]
+words = [['sun'], ['moon'], ['ocean'], ['mountain'], ['sun'], ['ocean']]
 
 encoder = OneHotEncoder(sparse_output=False)
 result = encoder.fit_transform(words)
