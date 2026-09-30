@@ -1,4 +1,4 @@
-# your own 5 sentences in a new collection
+# my own 5 sentences in a new collection
 
 import chromadb
 
