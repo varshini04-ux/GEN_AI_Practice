@@ -3,16 +3,22 @@
 from gensim.models import Word2Vec
 
 sentences = [
-    ["dog", "is", "a", "loyal", "animal"],
-    ["cat", "is", "a", "independent", "animal"],
-    ["dog", "loves", "to", "play"],
-    ["cat", "loves", "to", "sleep"],
-    ["dog", "is", "friendly"],
-    ["cat", "is", "friendly"],
-    ["dog", "and", "cat", "are", "pets"],
+    ["football", "is", "a", "team", "sport"],
+    ["cricket", "is", "a", "team", "sport"],
+    ["football", "is", "popular", "worldwide"],
+    ["cricket", "is", "popular", "in", "India"],
+    ["football", "requires", "stamina"],
+    ["cricket", "requires", "strategy"],
+    ["chess", "is", "a", "strategy", "game"],
+    ["chess", "requires", "patience"],
 ]
 
 model = Word2Vec(sentences, vector_size=10, window=2, min_count=1, workers=1)
 
-print(model.wv.most_similar('dog', topn=3))
-print(model.wv.most_similar('cat', topn=3))
+def check_similarity(word1, word2):
+    score = model.wv.similarity(word1, word2)
+    print(f"Similarity between '{word1}' and '{word2}': {score:.3f}")
+
+check_similarity('football', 'cricket')
+check_similarity('cricket', 'chess')
+check_similarity('football', 'chess')
