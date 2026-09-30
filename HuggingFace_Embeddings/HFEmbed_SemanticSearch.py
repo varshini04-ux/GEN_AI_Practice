@@ -6,16 +6,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 my_documents = [
-    "Python is widely used for data science and machine learning.",
-    "Neural networks are inspired by the structure of the human brain.",
-    "A balanced diet with vegetables and protein supports good health.",
-    "Regular exercise like running or swimming improves cardiovascular fitness.",
-    "The Great Wall of China stretches thousands of kilometers.",
-    "Tokyo is one of the most densely populated cities in the world.",
-    "Cricket and football are two of the most popular sports in India.",
-    "A home-cooked meal of rice and curry is a comfort food for many.",
-    "Cloud computing lets companies rent servers instead of owning hardware.",
-    "Climate change is causing more frequent extreme weather events."
+    "The International Space Station orbits Earth roughly every 90 minutes.",
+    "A good curry balances spice, acidity, and richness in every bite.",
+    "Compound interest allows savings to grow faster over long time periods.",
+    "Elephants are highly social animals that live in matriarchal herds.",
+    "The Renaissance was a period of major cultural and artistic rebirth in Europe.",
+    "Electric vehicles rely on lithium-ion batteries for their power storage.",
+    "Coral reefs support roughly a quarter of all marine species on Earth.",
+    "A well-diversified portfolio spreads risk across different asset classes.",
+    "The human heart beats around 100,000 times every single day.",
+    "Ancient Rome built an extensive network of roads connecting its empire."
 ]
 
 my_doc_embeddings = model.encode(my_documents)
@@ -30,6 +30,6 @@ def semantic_search_custom(query, docs, doc_embeddings, top_k=3):
         print(f"Score: {scores[idx]:.3f}  |  {docs[idx]}")
     print()
 
-semantic_search_custom("How do I stay physically fit?", my_documents, my_doc_embeddings)
-semantic_search_custom("Tell me about AI and neural networks", my_documents, my_doc_embeddings)
-semantic_search_custom("What are some famous places to visit?", my_documents, my_doc_embeddings)
+semantic_search_custom("How does the body work?", my_documents, my_doc_embeddings)
+semantic_search_custom("Tell me about investing and money", my_documents, my_doc_embeddings)
+semantic_search_custom("What lives in the ocean?", my_documents, my_doc_embeddings)
