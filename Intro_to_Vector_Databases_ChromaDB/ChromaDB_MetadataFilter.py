@@ -31,7 +31,7 @@ collection.add(
 
 print("Documents added! Total documents:", collection.count())
 
-print("\n--- Query filtered to 'energy' ---")
+print("\n Query filtered to 'energy' ")
 results_energy = collection.query(
     query_texts=["How do we generate power sustainably?"],
     n_results=2,
