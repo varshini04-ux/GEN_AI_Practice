@@ -1,12 +1,8 @@
-# Exercise 2: Re-chunk ai_overview.txt with chunk_size=150, store under v2 ids, compare retrieval
-# Standalone: run with  python rechunk_and_compare.py
-# Install once: pip install langchain-text-splitters chromadb sentence-transformers
-
 import chromadb
 from chromadb.utils import embedding_functions
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# ---------- Setup ----------
+
 article_text = """Artificial Intelligence: An Overview
 
 Artificial Intelligence, or AI, is the field of computer science focused on building systems
@@ -56,8 +52,6 @@ collection.add(
     ],
     ids=[f"ai_overview_chunk_{i}" for i in range(len(chunks))],
 )
-
-# ---------- Exercise 2 ----------
 small_splitter = RecursiveCharacterTextSplitter(
     chunk_size=150,
     chunk_overlap=30,
