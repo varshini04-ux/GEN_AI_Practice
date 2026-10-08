@@ -1,12 +1,10 @@
-# Exercise 1: Add a third document and confirm collection.count()
-# Standalone: run with  python add_third_document.py
-# Install once: pip install langchain-text-splitters chromadb sentence-transformers
+
 
 import chromadb
 from chromadb.utils import embedding_functions
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# ---------- Setup ----------
+
 article_text = """Artificial Intelligence: An Overview
 
 Artificial Intelligence, or AI, is the field of computer science focused on building systems
@@ -55,7 +53,7 @@ collection.add(
 )
 print("Stored original document. Count:", collection.count())
 
-# ---------- Exercise 1 ----------
+
 third_doc_text = """Transformers and Large Language Models
 
 The transformer is a neural network architecture that uses a mechanism called self-attention
